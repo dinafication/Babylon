@@ -1,0 +1,13 @@
+CREATE TABLE Language(code TEXT PRIMARY KEY, name TEXT);
+
+CREATE TABLE Level(code TEXT PRIMARY KEY, name TEXT);
+
+CREATE TABLE Word(phrase TEXT NOT NULL DEFAULT ' ', language TEXT NOT NULL DEFAULT ' ', level TEXT,
+		PRIMARY KEY(phrase, language), FOREIGN KEY(language) REFERENCES Language(code),
+		FOREIGN KEY(level) REFERENCES Level(code));
+		
+CREATE TABLE Translation(phrase1 TEXT NOT NULL DEFAULT ' ', language1 TEXT NOT NULL DEFAULT ' ', 
+			phrase2 TEXT NOT NULL DEFAULT ' ', language2 TEXT NOT NULL DEFAULT ' ', 
+		PRIMARY KEY(phrase1, language1, phrase2, language2), 
+		FOREIGN KEY(phrase1, language1) REFERENCES Word(phrase, language),
+		FOREIGN KEY(phrase2, language2) REFERENCES Word(phrase, language));
