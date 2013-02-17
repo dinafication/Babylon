@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 
+import nepal.dina.data.json.glodsy.Word;
 import nepal.dina.data.json.translated.WordTranslation;
 import nepal.dina.data.json.translated.WordTranslationList;
 import nepal.dina.io.FileIO;
@@ -33,6 +34,8 @@ import nepal.dina.transalation.GlodsyTranslator;
 import org.xml.sax.SAXException;
 
 import com.memetix.mst.language.Language;
+
+//import Poc.TestSqliteJdbc.entity;
 
 public class Main {
 
@@ -106,6 +109,9 @@ public class Main {
 			 * 5. Upisi u file.
 			 * */
 			FileIO.appendFile("res\\translations\\talian\\I\\I_eng_tal_8", jios);
+			
+			
+			//Translation t = new Translation();
 
 		} catch (IOException e) {
 
